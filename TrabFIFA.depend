@@ -1,0 +1,108 @@
+# depslib dependency file v1.0
+1663707269 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\main.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	"vector"
+	<sstream>
+	<stdio.h>
+	<stdlib.h>
+
+1635968464 c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\csv.h
+	<vector>
+	<string>
+	<cstring>
+	<algorithm>
+	<utility>
+	<cstdio>
+	<exception>
+	<mutex>
+	<thread>
+	<condition_variable>
+	<memory>
+	<cassert>
+	<cerrno>
+	<istream>
+	<limits>
+
+1663799958 c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\handle.h
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"vector"
+	<sstream>
+	<stdio.h>
+	<stdlib.h>
+
+1663113163 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\funcoes.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+
+1663799638 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\functions.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1663800999 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\trietree.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1663701746 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\listaencadeada.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1663701801 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\tabelahash.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
