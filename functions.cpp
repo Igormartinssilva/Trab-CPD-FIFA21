@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include <string.h>
-#include "csv.h"
+//#include "csv.h"
 #include "Handle.h"
 #include <vector>
 #include <sstream>
@@ -11,29 +11,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 using namespace std;
 //int acessos=0;
 //Lista *Tabela[CAPACITY]; ///tabela HASH, variavel global para facilitar
 
-
-void openRating(TrieNode *root)
+void openRating()
 {
     FILE *arq;
-    string fname;
+    char* fname;
     string line, word;
     char content[1024];
     char *v;
-    char* procurado = {"118046"};
-    float i=0;
-    int vintPrint=0;
-    notasUsers dadosNotas;
-
-    dadosNotas.rating.reserve(24200000);///aloca espaço no vector
-    dadosNotas.sofifa_id.reserve(24200000);
-    dadosNotas.user_id.reserve(24200000);
 
 
-    arq = fopen("rating.csv", "r");
+    int idenUser=0;
+    int idenFifa=0;
+    double notas=0;
+
+
+
+//    dadosNotas.rating.reserve(24200000);///aloca espaço no vector
+    //  dadosNotas.sofifa_id.reserve(24200000);
+    //  dadosNotas.user_id.reserve(24200000);
+
+
+    arq = fopen("minirating.csv", "r");
 
     //fstream arq("minirating.csv", ios::in);
 
@@ -43,19 +46,24 @@ void openRating(TrieNode *root)
 
         while(fgets(content,1024, arq))
         {
+            ///id user, id fifa, rating
             v = strtok(content, ",");
+            fname = v;//aqui vai ser o indice da tabela=idUser
+            idenUser= (atoi(v));
 
-            //pelo jeito que fiz, acho que nem precisa do while, mas time que ta ganhando nao se meche, ta funcioando bem
-            while(v)
-            {
-                ///funçao push_back insere no fim do vetor
-                dadosNotas.user_id.push_back(v);
-                v = strtok(NULL, ",");
-                dadosNotas.sofifa_id.push_back(v);
-                v = strtok(NULL, ",");
-                dadosNotas.rating.push_back(v);
-                v = strtok(NULL, ",");
-            }
+            v = strtok(NULL, ",");
+            idenFifa = (atoi(v));
+
+            v = strtok(NULL, ",");
+            notas = (atof(v));
+
+            v = strtok(NULL, ",");
+
+            ///o indice vai ser o id fifa
+            inserir(idenFifa, idenUser, notas); ///insere na TabelaidFifa, cujo o indice é id fifa
+
+            InsereUserTab(idenUser, idenFifa, notas);///tabela cujo indice é id user
+
         }
     }
     else
@@ -69,127 +77,128 @@ void openRating(TrieNode *root)
 
     cout << "conseguiu colocar tudo";
 
+      //print_table();
 
-    cout << "o max size e : " << dadosNotas.user_id.size() << endl << endl;///da print para saber a quantidade de dados tem no vetor
 
-    ///percorre todo o vetor e caso ja tenha dado 20 print, fecha a função, se for dar todos print da pau
-    while(i < dadosNotas.user_id.size() && vintPrint != 20)
-    {
-        if(dadosNotas.user_id[i] == procurado)
+
+    //caso fosse procurar na tabela hash um jogador fifa
+    //int chave = 228618;
+    //buscar(chave);
+    //procurar usuario
+    //char key[] = {"52505"};
+    //ht_search(52505);
+
+// imprimir();
+
+
+
+
+    /*
+        cout << "o max size e : " << dadosNotas.user_id.size() << endl << endl;///da print para saber a quantidade de dados tem no vetor
+
+        ///percorre todo o vetor e caso ja tenha dado 20 print, fecha a função, se for dar todos print da pau
+        while(i < dadosNotas.user_id.size() && vintPrint != 20)
         {
-            cout << "idFifa: "<< dadosNotas.sofifa_id[i];
-            cout << "\t Nota do user para jog: " << dadosNotas.rating[i] << endl<<endl;
-            vintPrint++;
-            cout << vintPrint;
+            if(dadosNotas.user_id[i] == procurado)
+            {
+                cout << "idFifa: "<< dadosNotas.sofifa_id[i];
+                cout << "\t Nota do user para jog: " << dadosNotas.rating[i] << endl<<endl;
+                vintPrint++;
+                cout << vintPrint;
+            }
+            i++;
         }
-        i++;
-    }
 
 
 
-    /* como andar pelo vetor e dar print nele, pode ser apagado
-    for(int i=9950; i<10001; i++)
-    {
-        cout << "O user id: " << dadosNotas.user_id[i];
-        cout << "\tO sofifa_id e: " << dadosNotas.sofifa_id[i];
-        cout << "\tA nota e: " << dadosNotas.rating[i] << endl << endl;
-    }
-    */
+         como andar pelo vetor e dar print nele, pode ser apagado
+        for(int i=9950; i<10001; i++)
+        {
+            cout << "O user id: " << dadosNotas.user_id[i];
+            cout << "\tO sofifa_id e: " << dadosNotas.sofifa_id[i];
+            cout << "\tA nota e: " << dadosNotas.rating[i] << endl << endl;
+        }
+        */
+
+
 }
 
-TrieNode* raiz;
+
 ///essa função abre o arquivo dos players e insere na arvore
-TrieNode* openJog(TrieNode* root)
+TrieNode* openJog(TrieNode* root, notasUsers dadosRating)
 {
-    int i=0;
+    // ACEITA TODoS OS CARACTERES
+    char *keys;
     FILE *arq;
-    char linha[5024];
     char *separador;
+    char linha[1024];
     int idJog;
-    char nomeJog[100];
-    char especial[]={"'"};
-    char nomeJogmin[100];
-    string posicaoGeral;
-    root = getNode();
+    char pos[20];
+    Jogadores infor;
+
+    Positions posicoes[17];
+
+    strcpy(posicoes[0].pos, "GK");
+    strcpy(posicoes[1].pos, "RB");
+    strcpy(posicoes[2].pos, "RWB");
+    strcpy(posicoes[3].pos, "CB");
+    strcpy(posicoes[4].pos, "LB");
+    strcpy(posicoes[5].pos, "LWB");
+    strcpy(posicoes[6].pos, "CDM");
+    strcpy(posicoes[7].pos, "CM");
+    strcpy(posicoes[8].pos, "CAM");
+    strcpy(posicoes[9].pos, "RM");
+    strcpy(posicoes[10].pos, "RW");
+    strcpy(posicoes[11].pos, "LM");
+    strcpy(posicoes[12].pos, "LW");
+    strcpy(posicoes[13].pos, "RF");
+    strcpy(posicoes[14].pos, "CF");
+    strcpy(posicoes[15].pos, "LF");
+    strcpy(posicoes[16].pos, "ST");
+    // struct TrieNode *root = getNode();
+
     arq = fopen("players.csv", "r");
 
-
-    raiz = (TrieNode*) malloc(sizeof(TrieNode));
-     raiz = getNode();
     if(!arq)
     {
         cout << "erro na abertura do arquivo";
     }
     else
     {
-        cout << "erro na abertura do arquivaaaaaaaaaaao";
-        fgets(linha,10024,arq);
-        while(fgets(linha,10024,arq))
+        fgets(linha, 1024, arq);
+        while(fgets(linha,1024,arq))
         {
+            //pega o sofifa_id
             separador = strtok(linha, ",");
-          //  printf("\n\npegando os dados: %s %s", nomeJog,posicao);
-
             idJog = atoi(separador);
+
+            //com isso tu procura esse sofifa_id na tabela para mesclar os dados com os nomes
+            infor = pegaDados(idJog);
+
+            //aqui tu pega o nome do jogador
             separador = strtok(NULL, ",");
-            //nomeJog = separador;
-            strcpy(nomeJog,separador);
+            keys = separador;
+
+            //aqui tu pega a posicao dele
             separador = strtok(NULL, "\n");
-            posicaoGeral = separador;
+            strcpy(pos, separador);
 
+            for (int i = 0; i < strlen(keys); i++)
+                insert(root, keys,idJog,pos, infor);
 
-            while(nomeJog[i] != '\0')
-            {
-                nomeJogmin[i]=tolower(nomeJog[i]);
-                if(nomeJogmin[i]== especial[0] )
-                {
-                    nomeJogmin[i] = ' ';
-                }
-
-                i++;
-            }
-            i=0;
-
-     cout << "\n\n!- " << nomeJogmin;
-
-
-     for(i=0;i<strlen(nomeJogmin);i++)
-    {
-            ///insere na arvore
-            insert(raiz, nomeJogmin, idJog, posicaoGeral);
-    }
-    i=0;
-
-
-            ///era para dar print mostrando que achou o Messi, mas da erro, eu vi tbm que anda bugando o nome dele na hora de dar print na arvore
-
-
-             //separador = strtok(NULL, ",");
-
-
-            idJog=0;
-            while(nomeJog[i] != '\0' )
-            {
-                nomeJog[i]='\0';
-                nomeJogmin[i]='\0';
-                i++;
-            }
-            i=0;
-
+               // for(int i=0; i< POS; i++)
+                //{
+                  //  if()
+                //}
+            //InsereTabPos(pos, idJog, keys, infor);
         }
-
-        cout << "\n\nconseguiu pegar todos os dados\n\n";
 
     }
     fclose(arq);
 
-    printAutoSuggestions(raiz,"Lio");
+    cout << "\ninseriu tudo\n\n";
+
 
     return root;
 
 }
-
-
-
-
-
-

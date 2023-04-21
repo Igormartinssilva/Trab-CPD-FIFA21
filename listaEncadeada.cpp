@@ -4,14 +4,14 @@
 #include <iostream>
 #include <string>
 #include <string.h>
-#include "csv.h"
+//#include "csv.h"
 #include "Handle.h"
 #include <vector>
 #include <sstream>
 #include <fstream>
 #include <stdio.h>
 #include <stdlib.h>
-int acessos;
+
 ///---------------------------------------------------FUNÇOES DA LISTA ENCADEADA----------------------------------------
 ///cria uma lista vazia e retorna o seu endereço de memoria
 Lista* criarLista()
@@ -25,6 +25,52 @@ Lista* criarLista()
 
 ///Função que vai inserir no inicio da lista encadeada, não precisando ir ate o fim dela
 Lista* insereInicio(Ht_item* item, Lista *lista)
+{
+    NoLis *no = (NoLis*)malloc(sizeof(NoLis));
+    no->item = item;
+
+    // cout << "isere incio";
+    if(lista->inicio == NULL)
+    {
+        //se nao tiver nada, tu cria a lista
+        no->next = lista->inicio;
+        lista->inicio = no;
+        lista->inicio->item->quantAval = lista->inicio->item->quantAval + 1;
+        lista->inicio->item->notaUserJog += item->notaUserJog;
+        lista->inicio->item->notaMedia = (lista->inicio->item->notaUserJog / lista->inicio->item->quantAval);
+
+    }
+    else
+    {
+        //se nao tu so atualiza ela
+        lista->inicio->item->quantAval = lista->inicio->item->quantAval + 1;
+        lista->inicio->item->notaUserJog += item->notaUserJog;
+        lista->inicio->item->notaMedia = (lista->inicio->item->notaUserJog / lista->inicio->item->quantAval);
+    }
+
+
+    ///Aqui linka a lista ja existente no com o novo elemento adicionado
+    // no->next = lista->inicio;
+    //  lista->inicio = no;
+    //  lista->tam++;
+
+}
+
+//Função que vai inserir no inicio da lista encadeada, não precisando ir ate o fim dela
+void insereUser(Ht_item* item, Lista *lista)
+{
+    NoLis *no = (NoLis*)malloc(sizeof(NoLis));
+    no->item = item;
+
+    ///Aqui linka a lista ja existente no com o novo elemento adicionado
+    no->next = lista->inicio;
+    lista->inicio = no;
+
+}
+
+
+///Função que vai inserir no inicio da lista encadeada de forma ordenada
+Lista* insereOrdenado(Ht_item* item, Lista *lista)
 {
     ///comparar a lista com  item , Lista é a tabela tbm
     NoLis *novo = (NoLis*)malloc(sizeof(NoLis));
@@ -56,6 +102,14 @@ Lista* insereInicio(Ht_item* item, Lista *lista)
 
                 return lista;
             }
+            /*   else if(ptAux->item->sofifa_id == lista->inicio->item->sofifa_id)
+               {
+                   lista->inicio->item->quantAval++;
+                   lista->inicio->item->notaMedia = (item->notaUserJog + lista->inicio->item->notaMedia) / lista->inicio->item->quantAval;
+
+                   return lista;
+               }
+            */
 
             ptAnte = ptAux;
             ptAux = ptAux->next;
@@ -95,13 +149,11 @@ Lista* insereInicio(Ht_item* item, Lista *lista)
 ///quando for buscar uma palavra, aqui percorre a lista no indice correto
 NoLis* buscarNo(char *mat, NoLis* inicio)
 {
-    acessos=0;
+
     while(inicio != NULL)
     {
-
-        acessos++;
         //encontrei o nome que eu queria
-        if(strcmp(inicio->item->nomeJogador, mat)== 0)
+        if(strcmp(inicio->item->indice, mat)== 0)
         {
             return inicio;
         }
@@ -126,7 +178,7 @@ void imprimirLista(NoLis* inicio)
         if(inicio)//evita de imprimir coisa nula
         {
             imprimirPessoa(inicio->item);
-            inicio=inicio->next;
+            inicio = inicio->next;
         }
     }
 }

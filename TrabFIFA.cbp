@@ -33,6 +33,7 @@
 		</Compiler>
 		<Unit filename="Handle.h" />
 		<Unit filename="TabelaHash.cpp" />
+		<Unit filename="TabelaidFifa.cpp" />
 		<Unit filename="TrieTree.cpp" />
 		<Unit filename="functions.cpp" />
 		<Unit filename="listaEncadeada.cpp" />

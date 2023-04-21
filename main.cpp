@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include <string.h>
-#include "csv.h"
+//#include "csv.h"
 #include "Handle.h"
 #include "vector"
 #include <sstream>
@@ -13,34 +13,55 @@
 // Driver
 int main()
 {
-    // Input keys (use only 'a' through 'z'
-    // and lower case)
+
     string keys[4];
     int data[4];
     int numJogadores=10000;
     int i;
     char str[20];
-    char finded[20] = {"the"};
-    TrieNode *root = getNode();
+    char finded[20];
+    notasUsers dados;
+    char pesquisa[20];
+    char pesq[2][10];
+    char *pt;
+    int z=0;
 
 
+    struct TrieNode *root = getNode();
+    inicializar();//inicializa a tabela hash
+    inicializarTabela();
 
     ///abre o rating e pesquisa todas as avaliações de determinado usuario
-  // openRating(root);
+    openRating();
 
+    root = openJog(root,dados);
 
+    cout << "Processamento de dados finalizado!\n";
 
-  root = openJog(root);
+    // juntaDados(root);
 
+    while(1)
+    {
+        cout << "Efetue a pesquisa:\n";
+        getchar();
+        scanf("%s", &pesquisa);
+        pt = strtok(pesquisa," ");
+        while(pt)
+        {
+            strcpy(pesq[z+1],pt);
+            pt=strtok(NULL," ");
+            z++;
+        }
+        if(strcmp(pesq[1],"player")==0)
+        {
+            printAutoSuggestions(root,pesq[2]);
+        }
+        else if(strcmp(pesq[1],"user")==0)
+        {
+            pesquisaUser(atoi(pesq[2]));
+        }
+        free(pesq);
 
-    ///função de pesquisar nome na arvore
-    printAutoSuggestions(root,"Fer");
-
-    /*
-        // Search for different keys
-        search(root, "the")? cout << "Searching for THE: found\n" :
-                             cout << "Searching for THE: not found\n";
-
-        */
+    }
     return 0;
 }

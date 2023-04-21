@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1663707269 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\main.cpp
+1663605158 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\main.cpp
 	<cstdio>
 	<cstdlib>
 	<iostream>
@@ -29,7 +29,7 @@
 	<istream>
 	<limits>
 
-1663799958 c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\handle.h
+1663703280 c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\handle.h
 	<cstdio>
 	<cstdlib>
 	<iostream>
@@ -50,7 +50,7 @@
 	"csv.h"
 	"Handle.h"
 
-1663799638 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\functions.cpp
+1663703147 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\functions.cpp
 	<cstdio>
 	<cstdlib>
 	<iostream>
@@ -64,7 +64,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1663800999 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\trietree.cpp
+1663703280 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa\trietree.cpp
 	<cstdio>
 	<cstdlib>
 	<iostream>
@@ -103,6 +103,509 @@
 	<vector>
 	<sstream>
 	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1663701748 source:e:\trabfifa\listaencadeada.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1635968464 e:\trabfifa\csv.h
+	<vector>
+	<string>
+	<cstring>
+	<algorithm>
+	<utility>
+	<cstdio>
+	<exception>
+	<mutex>
+	<thread>
+	<condition_variable>
+	<memory>
+	<cassert>
+	<cerrno>
+	<istream>
+	<limits>
+
+1663783140 e:\trabfifa\handle.h
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"vector"
+	<sstream>
+	<stdio.h>
+	<stdlib.h>
+
+1663701802 source:e:\trabfifa\tabelahash.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1663783234 source:e:\trabfifa\trietree.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1663783400 source:e:\trabfifa\main.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	"vector"
+	<sstream>
+	<stdio.h>
+	<stdlib.h>
+
+1663783400 source:e:\trabfifa\functions.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1664407326 source:d:\trabfifa\functions.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1635968464 d:\trabfifa\csv.h
+	<vector>
+	<string>
+	<cstring>
+	<algorithm>
+	<utility>
+	<cstdio>
+	<exception>
+	<mutex>
+	<thread>
+	<condition_variable>
+	<memory>
+	<cassert>
+	<cerrno>
+	<istream>
+	<limits>
+
+1664406332 d:\trabfifa\handle.h
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"vector"
+	<sstream>
+	<stdio.h>
+	<stdlib.h>
+
+1664398536 source:d:\trabfifa\listaencadeada.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1664406332 source:d:\trabfifa\main.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	"vector"
+	<sstream>
+	<stdio.h>
+	<stdlib.h>
+
+1664407264 source:d:\trabfifa\tabelahash.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1664030816 source:d:\trabfifa\trietree.cpp
+	<iostream>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<stdio.h>
+	<stdlib.h>
+
+1664407392 source:d:\trabfifa\tabelaidfifa.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+	<stdio.h>
+	<stdlib.h>
+
+1664983510 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trab fifa 1.5\listaencadeada.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1635968464 c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trab fifa 1.5\csv.h
+	<vector>
+	<string>
+	<cstring>
+	<algorithm>
+	<utility>
+	<cstdio>
+	<exception>
+	<mutex>
+	<thread>
+	<condition_variable>
+	<memory>
+	<cassert>
+	<cerrno>
+	<istream>
+	<limits>
+
+1664987291 c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trab fifa 1.5\handle.h
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"vector"
+	<sstream>
+	<stdio.h>
+	<stdlib.h>
+
+1664406332 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trab fifa 1.5\main.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	"vector"
+	<sstream>
+	<stdio.h>
+	<stdlib.h>
+
+1664987291 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trab fifa 1.5\tabelahash.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1664976645 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trab fifa 1.5\tabelaidfifa.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+	<stdio.h>
+	<stdlib.h>
+
+1664030816 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trab fifa 1.5\trietree.cpp
+	<iostream>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<stdio.h>
+	<stdlib.h>
+
+1664985317 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trab fifa 1.5\functions.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"csv.h"
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1664997027 source:c:\users\luana\onedrive\documentos\trabfifa1.5\listaencadeada.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1635968464 c:\users\luana\onedrive\documentos\trabfifa1.5\csv.h
+	<vector>
+	<string>
+	<cstring>
+	<algorithm>
+	<utility>
+	<cstdio>
+	<exception>
+	<mutex>
+	<thread>
+	<condition_variable>
+	<memory>
+	<cassert>
+	<cerrno>
+	<istream>
+	<limits>
+
+1664997027 c:\users\luana\onedrive\documentos\trabfifa1.5\handle.h
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"vector"
+	<sstream>
+	<stdio.h>
+	<stdlib.h>
+
+1665001577 source:c:\users\luana\onedrive\documentos\trabfifa1.5\main.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"Handle.h"
+	"vector"
+	<sstream>
+	<stdio.h>
+	<stdlib.h>
+
+1665008799 source:c:\users\luana\onedrive\documentos\trabfifa1.5\tabelahash.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1664997027 source:c:\users\luana\onedrive\documentos\trabfifa1.5\tabelaidfifa.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+	<stdio.h>
+	<stdlib.h>
+
+1664998958 source:c:\users\luana\onedrive\documentos\trabfifa1.5\trietree.cpp
+	<iostream>
+	<string.h>
+	"Handle.h"
+	<vector>
+	<stdio.h>
+	<stdlib.h>
+
+1665008799 source:c:\users\luana\onedrive\documentos\trabfifa1.5\functions.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1665019944 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa 2.6\trabfifa1.5\functions.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1665013743 c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa 2.6\trabfifa1.5\handle.h
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"vector"
+	<sstream>
+	<stdio.h>
+	<stdlib.h>
+
+1664997027 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa 2.6\trabfifa1.5\listaencadeada.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1665008799 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa 2.6\trabfifa1.5\tabelahash.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+
+1664997027 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa 2.6\trabfifa1.5\tabelaidfifa.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"Handle.h"
+	<vector>
+	<sstream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+	<stdio.h>
+	<stdlib.h>
+
+1664998958 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa 2.6\trabfifa1.5\trietree.cpp
+	<iostream>
+	<string.h>
+	"Handle.h"
+	<vector>
+	<stdio.h>
+	<stdlib.h>
+
+1665014743 source:c:\users\igor\downloads\eng. comp. ufrgs\3 semestre 2022-1\class e pesq de dados -  inf 01058- a\trabalho final\trabfifa 2.6\trabfifa1.5\main.cpp
+	<cstdio>
+	<cstdlib>
+	<iostream>
+	<string>
+	<string.h>
+	"Handle.h"
+	"vector"
+	<sstream>
 	<stdio.h>
 	<stdlib.h>
 

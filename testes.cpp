@@ -1,18 +1,33 @@
-
-#include <iostream>
-
-#include <string.h>
-//#include "csv.h"
-#include "Handle.h"
-#include <vector>
-
+// C++ implementation of search and insert
+// operations on Trie
+#include <bits/stdc++.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 
-// Converts key current character into index
-// use only 'a' through 'z' and lower case
+using namespace std;
+
+const int ALPHABET_SIZE = 91;
 #define CHAR_TO_INDEX(c) ((int)c - (int)' ')
+// trie node
+
+
+
+typedef struct Jogadores
+{
+    char *NomeJg;
+    int idJog;
+    char Pos[20];
+};
+// trie node
+struct TrieNode
+{
+    struct TrieNode *children[ALPHABET_SIZE];
+    Jogadores player;
+    // isEndOfWord is true if the node represents
+    // end of a word
+    bool isEndOfWord;
+};
 
 // Returns new trie node (initialized to NULLs)
 struct TrieNode *getNode(void)
@@ -30,7 +45,7 @@ struct TrieNode *getNode(void)
 // If not present, inserts key into trie
 // If the key is prefix of trie node, just
 // marks leaf node
-struct TrieNode* insert(struct TrieNode *root, char *key, int idJog, char posicao[], Jogadores info)
+struct TrieNode* insert(struct TrieNode *root, char *key, int idJog, char posicao[])
 {
     struct TrieNode *pCrawl = root;
 
@@ -49,8 +64,6 @@ struct TrieNode* insert(struct TrieNode *root, char *key, int idJog, char posica
     pCrawl->player.idJog = idJog;
     pCrawl->player.NomeJg = key;
     strcpy(pCrawl->player.Pos, posicao);
-    pCrawl->player.quantAval =  info.quantAval;
-    pCrawl->player.notaMedia =  info.notaMedia;
 
 
 
@@ -73,11 +86,9 @@ void suggestionsRec(struct TrieNode* root, string currPrefix)
     // found a string in Trie with the given prefix
     if (root->isEndOfWord)
     {
-        cout << root->player.idJog <<"\t\t";
-        cout << currPrefix <<"\t\t";
-        cout << root->player.Pos << "\t\t";
-        cout <<root->player.notaMedia <<"\t\t";
-        cout <<root->player.quantAval <<"\t\n";
+        cout << currPrefix;
+        cout << "\tdado do jogador: " << root->player.idJog;
+        cout << "\tposicao: " << root->player.Pos << endl << endl;
     }
     for (int i = 0; i < ALPHABET_SIZE; i++)
     {
@@ -111,14 +122,54 @@ int printAutoSuggestions(TrieNode* root, const string query)
     {
         cout << query;
         cout << "\tdado do jogador: " << pCrawl->player.idJog;
-
-        cout << "\tavaliacoes: " <<pCrawl->player.quantAval;
-        cout << "\tnota media: " <<pCrawl->player.notaMedia;
         cout << "\tposicao: " << pCrawl->player.Pos << endl;
-
         return -1;
     }
-    cout << "sofifa_id \t | Name \t | player_positions \t | rating \t | count\n";
     suggestionsRec(pCrawl, query);
     return 1;
+}
+
+// Driver
+int main()
+{
+    // ACEITA TODoS OS CARACTERES
+    char *keys;
+    FILE *arq;
+    char *separador;
+    char linha[1024];
+    int idJog;
+    char pos[20];
+
+    struct TrieNode *root = getNode();
+
+    arq = fopen("players.csv", "r");
+
+    if(!arq)
+    {
+        cout << "erro na abertura do arquivo";
+    }
+    else
+    {
+        fgets(linha, 1024, arq);
+        while(fgets(linha,1024,arq))
+        {
+            separador = strtok(linha, ",");
+            idJog = atoi(separador);
+
+            separador = strtok(NULL, ",");
+            keys = separador;
+
+            separador = strtok(NULL, "\n");
+            strcpy(pos, separador);
+
+            for (int i = 0; i < strlen(keys); i++)
+                 insert(root, keys,idJog,pos);
+        }
+
+    }
+    fclose(arq);
+
+    cout << "\ninseriu tudo\n\n";
+
+    return 0;
 }
